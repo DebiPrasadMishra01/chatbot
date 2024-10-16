@@ -1,0 +1,170 @@
+/* chatbot.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    height: 100vh; /* Full height */
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* Soft shadows */
+    padding: 20px;
+    animation: fadeIn 0.5s; /* Fade-in animation */
+    width: 350px; /* Fixed width */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#chatbox {
+    width: 100%;
+    height: 400px;
+    border: none; /* No border */
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #222; /* Darker chat background */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow */
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 10px 15px; /* Increased padding for messages */
+    border-radius: 20px; /* More rounded message bubbles */
+    max-width: 80%; /* Max width for messages */
+    display: inline-block;
+    position: relative;
+    transition: transform 0.2s; /* Add a hover effect */
+}
+
+.active {
+    background-color: #28a745; /* Green background for active state */
+    color: white;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #444; /* User message color */
+    color: white; /* White text */
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #444; /* Bot message color */
+    color: #fadd05; /* Bot text color */
+}
+
+.message:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Typing Indicator Style */
+.typing-indicator {
+    font-style: italic;
+    color: gray;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    background-color: #333; /* Input field background */
+    color: #fff; /* Input text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Inner shadow */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+input::placeholder {
+    color: #bbb; /* Placeholder text color */
+}
+
+input:focus {
+    background-color: #444; /* Focused background color */
+    outline: none; /* Remove outline */
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #1e90ff; /* Button background */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Button shadow */
+    margin-left: 5px;
+}
+
+button:hover {
+    background-color: #1c86ee; /* Hover color */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+#feedback {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#feedback button {
+    margin: 0 10px;
+    background-color: #ff9800;
+}
+
+#feedback button:hover {
+    background-color: #e68900;
+}
+
+/* Additional responsive design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%; /* Adjust container width on small screens */
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #chatbox {
+        height: 300px; /* Reduce chatbox height on small screens */
+    }
+}
